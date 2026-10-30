@@ -2,9 +2,17 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
+<p align="center">
+  <img src="docs/images/c778-front.png" alt="C778 LT6911UXE HDMI-to-MIPI CSI-2 module — front view" width="480" />
+</p>
+
 Development driver and CSI0 device-tree overlay for the **BliCube C778 HDMI-to-MIPI CSI-2 module on Raspberry Pi 5 Model B**. This repository contains the source used in the 2026-10-29 bring-up, plus build and reproduction scripts.
 
 **Current status:** one CSI0 path delivered a complete **3840×2160 UYVY stream at approximately 60 fps** in a 600-frame, 10-second test. The kernel also reported **`DPHY: Datarate 2495 Mbps out of range`**. This is a development snapshot with known issues, not a production-ready or long-term 4K60 compatibility claim.
+
+## Official hardware documentation
+
+See the [C778 module guide](https://blikvm.com/docs/device-guides/C778/) for the LT6911UXE overview, HDMI input capabilities, MIPI output modes, connector pinout, cable orientation and package contents. This README covers the Pi 5 driver and capture workflow.
 
 ## Scope and tested environment
 

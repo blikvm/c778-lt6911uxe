@@ -2,9 +2,17 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
+<p align="center">
+  <img src="docs/images/c778-front.png" alt="C778 LT6911UXE HDMI 转 MIPI CSI-2 模块正面实物图" width="480" />
+</p>
+
 用于 **BliCube C778 HDMI 转 MIPI CSI-2 模块与树莓派 5 Model B** 的开发驱动和 CSI0 设备树。本仓库整理了 2026-10-29 实机调试使用的源码，以及构建和复现脚本。
 
 **当前状态：**已在 CSI0 单路采集到完整的 **3840×2160 UYVY、约 60fps** 画面，完成 600 帧、约 10 秒短测。但内核仍报告 **`DPHY: Datarate 2495 Mbps out of range`**。这是带有已知问题的开发快照，不代表已达到正式产品或长期稳定的 4K60 兼容性要求。
+
+## 官网硬件说明
+
+有关 LT6911UXE 主芯片、HDMI 输入能力、MIPI 输出模式、接口线序、排线方向和包装清单，请查看官网的 [C778 模块说明文档](https://blikvm.com/zh-CN/docs/device-guides/C778/)。本 README 侧重树莓派 5B 的驱动构建与采集使用方法。
 
 ## 支持范围与实测环境
 
