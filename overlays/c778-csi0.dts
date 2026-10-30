@@ -1,0 +1,39 @@
+/dts-v1/;
+/plugin/;
+/ {
+ compatible = "brcm,bcm2712";
+ fragment@0 {
+  target = <&i2c_csi_dsi0>;
+  __overlay__ {
+   #address-cells = <1>;
+   #size-cells = <0>;
+   status = "okay";
+   c778: c778@2b {
+    compatible = "blicube,c778-lt6911uxe";
+    reg = <0x2b>;
+    status = "okay";
+    port {
+     c778_out: endpoint {
+      remote-endpoint = <&c778_csi_in>;
+      clock-lanes = <0>;
+      data-lanes = <1 2 3 4>;
+      link-frequencies = /bits/ 64 <500000000>;
+     };
+    };
+   };
+  };
+ };
+ fragment@1 {
+  target = <&csi0>;
+  __overlay__ {
+   status = "okay";
+   port {
+    c778_csi_in: endpoint {
+     remote-endpoint = <&c778_out>;
+     clock-lanes = <0>;
+     data-lanes = <1 2 3 4>;
+    };
+   };
+  };
+ };
+};

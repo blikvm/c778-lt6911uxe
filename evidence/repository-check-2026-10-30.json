@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-30",
+  "platform": "Raspberry Pi 5 Model B Rev 1.0",
+  "kernel": "6.18.50+rpt-rpi-2712",
+  "driverSourceSha256": "70d59ed6c7b0ecfe5d2ea77a507756a31c35f925e33505c3ddd0ebb4d31e565a",
+  "moduleBuild": "passed against installed matching headers",
+  "dtboBuild": "passed",
+  "scriptsSyntax": "passed",
+  "loaderTest": "idempotent path passed while the original tested same-source module was already active; no cold-load or new boot persistence claim",
+  "statusDiscovery": "passed",
+  "captureWrapper": "30 full-size 3840x2160 UYVY frames, completed, approximately 60fps",
+  "makeClean": "module and DTBO removed from the isolated build folder",
+  "limitations": "Original 4K DPHY range warning and other known issues remain; this packaging check does not extend hardware coverage."
+}

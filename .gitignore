@@ -1,0 +1,19 @@
+# Local kernel-module and device-tree build products
+*.o
+*.ko
+*.mod
+*.mod.c
+*.cmd
+*.dtbo
+*.symvers
+modules.order
+.tmp_versions/
+Module.symvers
+# Local measurements and capture output
+results/
+*.uyvy
+*.raw
+*.yuv
+*.mkv
+*.mp4
+.DS_Store

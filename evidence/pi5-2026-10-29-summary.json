@@ -1,0 +1,17 @@
+{
+  "exitCode": 0,
+  "frames": 600,
+  "sizeBytesExpected": 16588800,
+  "allFullSize": true,
+  "sequenceContinuous": true,
+  "timestampsIncreasing": true,
+  "timestampFps": 59.99920869157274,
+  "elapsedSeconds": 10.028879105000215,
+  "bufferErrorLines": [],
+  "kernelDelta": [
+    "[ 3391.566133] rp1-cfe 1f00110000.csi: Using a link rate of 2495 Mbps",
+    "[ 3391.566196] rp1-cfe 1f00110000.csi: DPHY: Datarate 2495 Mbps out of range"
+  ],
+  "source": "Pi5 HDMI-A-1 into C778; actual full desktop frame saved separately",
+  "scope": "CSI0 single path, short capture only; no dual-path/sync/audio/long-soak validation"
+}
