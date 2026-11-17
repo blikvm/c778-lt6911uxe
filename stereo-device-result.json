@@ -1,0 +1,1 @@
+{"time": 1794895435.7102315, "ok": true, "channels": [{"channel": 0, "rms": 0.07071145522983116, "hz": 1000.0, "expected": 1000, "ok": true}, {"channel": 1, "rms": 0.07071032212506122, "hz": 1500.0, "expected": 1500, "ok": true}]}

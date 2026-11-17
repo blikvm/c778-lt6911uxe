@@ -1,0 +1,16 @@
+C778 Pi 5 reboot audit — 2026-11-17
+10/10 passed bounded automatic checks. Software reboots, not power cycles.
+Criteria: hardware service active; two ffplay processes; preview log grows over 3 seconds and has nonzero video queue; recent 1000 Hz audio status. These checks do not prove image correctness, frame continuity, right-channel audio or A/V synchronization.
+Driver source SHA256: 70d59ed6c7b0ecfe5d2ea77a507756a31c35f925e33505c3ddd0ebb4d31e565a
+Temporary reboot service disabled after round 10. Normal factory startup retained.
+
+Round 01: PASS boot_id=4b869802-e4b4-4e7c-aa1b-e809d9c7a6c3
+Round 02: PASS boot_id=e92973a1-2ea2-46d4-8d4b-ad388dacec59
+Round 03: PASS boot_id=cc9a27e0-da80-403a-a152-f1e9eb7aef18
+Round 04: PASS boot_id=4673dbb5-032d-473e-8f28-61f359fd4dd5
+Round 05: PASS boot_id=770c9e39-3ed5-4333-8b25-eb275428458a
+Round 06: PASS boot_id=9e49c4e7-6e06-4bf5-860a-cb0346a59030
+Round 07: PASS boot_id=9201ea1b-7d95-4224-b5ea-08bae17f8ce7
+Round 08: PASS boot_id=8b05be79-3919-4592-8453-bfbac4063a58
+Round 09: PASS boot_id=6f914741-82f5-453f-96ce-cceb9965ab06
+Round 10: PASS boot_id=d94d56cc-61aa-4d18-9000-4c258ed621d0

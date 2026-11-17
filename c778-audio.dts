@@ -1,0 +1,14 @@
+/dts-v1/;
+/plugin/;
+/ {
+ compatible = "brcm,bcm2712";
+ fragment@0 { target = <&i2s_clk_consumer>; __overlay__ { status = "okay"; }; };
+ fragment@1 { target-path = "/"; __overlay__ {
+  c778_codec: c778-audio-codec { compatible = "linux,spdif-dir"; #sound-dai-cells = <0>; };
+  c778_audio { compatible = "simple-audio-card"; simple-audio-card,name = "C778-I2S"; simple-audio-card,format = "i2s";
+   simple-audio-card,bitclock-master = <&codec_link>; simple-audio-card,frame-master = <&codec_link>;
+   simple-audio-card,cpu { sound-dai = <&i2s_clk_consumer>; dai-tdm-slot-num = <2>; dai-tdm-slot-width = <32>; };
+   codec_link: simple-audio-card,codec { sound-dai = <&c778_codec>; };
+  };
+ }; };
+};

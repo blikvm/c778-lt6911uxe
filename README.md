@@ -31,7 +31,7 @@ See the [C778 module guide](https://blikvm.com/docs/device-guides/C778/) for the
 
 The source starts from the official Linux v6.18 LT6911UXE driver; see [provenance](docs/provenance.md). It is **not** the legacy `anran_*` factory-test stack or a port of the vendor firmware-flashing example.
 
-This snapshot does not validate CSI1, two simultaneous outputs, left/right split capture, synchronization, 1080p120, I²S audio, active-stream hotplug or other kernels. The RV1126B driver is not included in this first Pi 5 snapshot.
+This snapshot does not validate CSI1, two simultaneous outputs, left/right split capture, synchronization, 1080p120, active-stream hotplug or other kernels. The RV1126B driver is not included in this first Pi 5 snapshot.
 
 ## 1. Hardware connection
 
@@ -157,7 +157,7 @@ When switching driver revisions, stop capture and reboot before loading the new 
 - **D-PHY warning:** the successful short 4K60 run logged `Datarate 2495 Mbps out of range`. PHY timing/rate setup and long-term integrity still require investigation. Do not suppress the warning or advertise unconditional stable 4K60 support from this result.
 - **Color metadata:** capture currently reports Raw / ITU-R 601 / full range. HDMI colorimetry and range propagation are incomplete.
 - **No-signal error path:** an earlier, discarded revision that rejected no-input STREAMON triggered an Oops in the distribution CFE error cleanup. The committed version uses upstream-style waiting and passed the bounded no-input stop test. The distribution CFE itself has not been generally fixed or certified.
-- **Untested functionality:** dual CSI, split halves, 1080p120, audio, long soak, repeated mode changes, active hotplug and boot persistence remain unvalidated.
+- **Untested functionality:** dual CSI, split halves, 1080p120, long soak, repeated mode changes and active hotplug remain unvalidated. Optional audio/startup testing has a separate scope below.
 - **Firmware provenance:** no firmware-version hash was collected in this run. Chip identity alone does not establish a reproducible firmware release.
 
 See [source provenance and details](docs/provenance.md) and the [original measurement report](evidence/pi5-2026-10-29-summary.json). Short raw capture does not measure encoding performance or end-to-end latency.
@@ -169,3 +169,8 @@ Include the Pi and C778 revisions, `uname -a`, module source commit, firmware/pr
 ## License
 
 [GPL version 2](LICENSE). The original driver copyright/SPDX header is preserved. See [provenance](docs/provenance.md) for the upstream file and tested source hash. This repository does not distribute vendor firmware or flashing tools.
+
+
+## Pi 5 audio and factory loopback
+
+See [audio and factory setup](docs/pi5-audio-factory.md) for the GPIO18/19/20 I²S receiver overlay, stereo test tones, fail-closed status display, optional desktop autostart and removal. The video driver source is unchanged. The original 10/10 warm reboot evidence covers the earlier left-channel detector; the new stereo detector has separate validation. This does not certify cold boot, calibrated audio, latency or long-term 4K60.

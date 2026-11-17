@@ -1,0 +1,1 @@
+["ffplay", "-f", "v4l2", "-input_format", "uyvy422", "-video_size", "3840x2160", "-i", "/dev/video0", "-an", "-fflags", "nobuffer", "-framedrop", "-window_title", "C778_CAPTURE_HDMI0", "-left", "0", "-top", "0", "-x", "1280", "-y", "720", "-fs"]
